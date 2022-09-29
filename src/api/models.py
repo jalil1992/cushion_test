@@ -28,4 +28,5 @@ class Transaction(models.Model):
     merchant_name = models.CharField(max_length=200, default="")
     status = models.CharField(max_length=32, choices=TransactionStatus.choices, default=TransactionStatus.pending)
     settled_amount_cents = models.IntegerField(default=0)
+    time_to_settle_seconds = models.IntegerField(default=10)
     ip = models.CharField(max_length=32, default="")

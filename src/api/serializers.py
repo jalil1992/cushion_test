@@ -15,3 +15,8 @@ class PaymentCreateRequestSerializer(serializers.Serializer):
     amount_cents = serializers.IntegerField()
     account_id = serializers.IntegerField()
     merchant_name = serializers.CharField(max_length=200, allow_blank=False)
+
+class TransactionCallbackRequestSerializer(serializers.Serializer):
+    amount_cents = serializers.IntegerField()
+    money_movement_id = serializers.IntegerField()
+    status = serializers.CharField(max_length=32, required=False)
